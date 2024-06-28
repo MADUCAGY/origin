@@ -3,7 +3,7 @@
 
 import pyautogui
 import time
-pyautogui.pause = 0.5
+pyautogui.pause = 1
 
 #pyautogui.pause = 0.5 #para que os comandos nao se atropelem  
 #Passo a Passo do projeto
@@ -13,13 +13,12 @@ time.sleep(1) #para que de tempo dele escrever no spotlight
 pyautogui.hotkey("command","space",interval=0.25) #para abrir o Spotlight
 pyautogui.write("chrome")
 pyautogui.press("enter") 
-time.sleep(1)
-
+time.sleep(2)
 #2.Acessar o site para cadastrar os produtos
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press("enter")
-time.sleep(1) #para aguardar a tela abrir
-
+time.sleep(1) #para aguardar a tela abrir5.0
+    
 #3.fazer login 
 pyautogui.press("tab")
 pyautogui.write("pythonimpressionador@gmail.com")
@@ -30,7 +29,7 @@ time.sleep(1)
 pyautogui.press("enter")
 #4.Abrir/importar a base de dados do produto para cadastrar
 import pandas as pd 
-tabela = pd.read_csv("/Users/maducagy/Desktop/Projetos/backEndProjects/intensicaoPython/produtos.csv")
+tabela = pd.read_csv("/Users/maducagy/Desktop/Projetos de Estudos/backEndCourses/intensicaoPython/Aula1/produtos.csv")
 #5.Realizar o cadastro dos produtos
 for linha in tabela.index:
     #preencher codigo
@@ -66,4 +65,3 @@ for linha in tabela.index:
     pyautogui.press("enter")
     pyautogui.scroll(5000)
 #6.Repetir isso tudo para cada produto    
-
